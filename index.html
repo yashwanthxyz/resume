@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Yashwanth Kosuri – AI Enthusiast Resume showcasing expertise in Artificial Intelligence, Machine Learning, and data-driven problem-solving"
+    />
+    <title>Yashwanth | Resume</title>
+    <link rel="icon" type="image/png" href="assets/Profile picture.png"/>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Page Setup */
+      @page {
+        size: A4;
+        margin: 10mm 20mm 20mm 20mm;
+      }
+
+      /* Base Reset & Typography */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f7;
+        color: #1d1d1f;
+        font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      /* Container */
+      .container {
+        max-width: 850px;
+        margin: 20px auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Header */
+      header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 24px;
+      }
+      .profile {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .profile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .main-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .main-info h1 {
+        font-size: 26px;
+        font-weight: 700;
+        margin: 0;
+        color: #1d1d1f;
+      }
+      .subtitle {
+        font-size: 15px;
+        font-weight: 500;
+        color: #6c6c70;
+        margin: 0;
+      }
+      .contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        font-size: 14px;
+        color: #6c6c70;
+      }
+      .contact-info a {
+        color: #007aff;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .contact-info a:hover {
+        text-decoration: underline;
+      }
+
+      /* Section Headings with Emojis */
+      h2 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 32px 0 12px 0;
+        color: #1d1d1f;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      h2 .material-icons-outlined {
+        font-size: 18px;
+        color: #8e8e93;
+      }
+
+      /* Section Content Layout */
+      .section-content {
+        margin-bottom: 16px;
+      }
+      .entry {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .entry .entry-details {
+        flex: 1;
+      }
+      .entry-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #1d1d1f;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        align-items: center;
+      }
+      .entry-subtitle {
+        font-weight: 500;
+        color: #6c6c70;
+      }
+      .entry-dates {
+        font-size: 15px;
+        font-weight: 500;
+        white-space: nowrap;
+        color: #1d1d1f;
+        margin-left: auto;
+      }
+      ul {
+        margin: 8px 0 0 20px;
+        padding: 0;
+      }
+      ul li {
+        margin-bottom: 4px;
+      }
+
+      /* Grid Layouts for Skills and Certifications */
+      .grid-two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+        }
+        .main-info {
+          align-items: flex-start;
+        }
+        .contact-info {
+          display: block;
+        }
+        .contact-info div {
+          margin-bottom: 8px;
+        }
+        .project-link {
+          display: block;
+          margin-top: 8px;
+        }
+        .entry {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .entry-dates {
+          margin-top: 4px;
+        }
+      }
+
+      /* Section Separator: Reduced spacing with a light grey line */
+      .section-content:not(:last-of-type) {
+        border-bottom: 1px solid #d3d3d3;
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+      }
+
+      /* Radar Animation for Zomato */
+      .radar {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #28a745;
+        border-radius: 50%;
+        margin-right: 8px;
+        position: relative;
+      }
+      .radar::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #28a745;
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        animation: radarPulse 2s infinite;
+      }
+      @keyframes radarPulse {
+        0% {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(2);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="profile">
+          <img src="assets/Profile picture.png" alt="Yashwanth Profile Picture" />
+        </div>
+        <div class="main-info">
+          <h1>Yashwanth Kosuri</h1>
+          <p class="subtitle">B.Tech Artificial Intelligence</p>
+          <div class="contact-info">
+            <div>
+              <span
+                >Email:
+                <a href="mailto:yashwanthkosuri29@gmail.com"
+                  >yashwanthkosuri29@gmail.com</a
+                ></span
+              >
+              <br />
+              <span>Phone: <a href="tel:9908213633">9908213633</a></span>
+            </div>
+            <div>
+              <span
+                >Github:
+                <a
+                  href="https://www.github.com/yashwanthxyz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >github.com/yashwanthxyz</a
+                ></span
+              >
+              <br />
+              <span
+                >LinkedIn:
+                <a
+                  href="https://www.linkedin.com/in/yashwanthxyz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >linkedin.com/in/yashwanthxyz</a
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <!-- Summary Section -->
+        <section class="section-content">
+          <h2>
+            <img
+              src="https://em-content.zobj.net/source/apple/419/memo_1f4dd.png"
+              alt="Memo"
+              style="
+                width: 20px;
+                height: 20px;
+                vertical-align: middle;
+                margin-right: 6px;
+              "
+            />
+            Summary
+          </h2>
+          <p>
+            Aspiring AI Engineer with a strong foundation in Artificial
+            Intelligence and Machine Learning. Passionate about leveraging AI to
+            solve real-world problems and build innovative, data-driven
+            solutions. Focused on combining technical expertise with continuous
+            learning to create impactful technologies that drive smarter
+            outcomes.
+          </p>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section class="section-content">
+          <h2>
+            <img
+              src="https://em-content.zobj.net/source/apple/419/briefcase_1f4bc.png"
+              alt="Briefcase"
+              style="
+                width: 20px;
+                height: 20px;
+                vertical-align: middle;
+                margin-right: 6px;
+              "
+            />Work Experience
+          </h2>
+          <div class="entry">
+            <div class="entry-details">
+              <div class="entry-title">
+                MyCaptain <span class="entry-subtitle">Campus Captain</span>
+              </div>
+              <ul>
+                <li>
+                    Assumed leadership responsibilities as the Campus Captain for MyCaptain.
+                </li>
+                <li>
+                    Facilitated communication between MyCaptain and the student body, ensuring
+                    smooth operations and effective engagement.
+                </li>
+              </ul>
+            </div>
+            <div class="entry-dates">May 2023 - Aug 2023</div>
+          </div>
+          <div class="entry">
+            <div class="entry-details">
+              <div class="entry-title">
+                Internshala
+                <span class="entry-subtitle"
+                  >Internshala Student Partner (ISP)</span
+                >
+              </div>
+              <ul>
+                <li>
+                    Collaborated with Internshala to promote their services and programs on campus.
+                </li>
+                <li>
+                    Acted as a liaison between Internshala and the student community, addressing
+                    queries and providing guidance.
+                </li>
+              </ul>
+            </div>
+            <div class="entry-dates">Apr 2023 - May 2023</div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section-content">
+          <h2>
+            <img
+            src="https://em-content.zobj.net/source/apple/419/graduation-cap_1f393.png"
+            alt="Graduation Cap"
+            style="
+              width: 20px;
+              height: 20px;
+              vertical-align: middle;
+              margin-right: 6px;
+            "
+          /> Education</h2>
+          <div class="entry">
+            <div class="entry-details">
+              <div class="entry-title">
+                Anurag University
+                <span class="entry-subtitle"
+                  >B.Tech Artificial Intelligence (CGPA: 8.0)</span
+                >
+              </div>
+            </div>
+            <div class="entry-dates">Oct 2022 - Jun 2025</div>
+          </div>
+          <div class="entry">
+            <div class="entry-details">
+              <div class="entry-title">
+                Teegala Krishna Reddy Engineering College
+                <span class="entry-subtitle">Diploma, CSE</span>
+              </div>
+            </div>
+            <div class="entry-dates">Jun 2019 - Jun 2022</div>
+          </div>
+          <div class="entry">
+            <div class="entry-details">
+              <div class="entry-title">
+                Sri Sai Chaitanya Techno High School <span class="entry-subtitle">SBSE</span>
+              </div>
+            </div>
+            <div class="entry-dates">May 2019</div>
+          </div>
+        </section>
+
+        <!-- Notable Projects Section -->
+        <section class="section-content">
+          <h2>
+            <img
+            src="https://em-content.zobj.net/source/apple/419/file-folder_1f4c1.png"
+            alt="File Folder"
+            style="
+              width: 20px;
+              height: 20px;
+              vertical-align: middle;
+              margin-right: 6px;
+            "
+          /> Notable Projects</h2>
+          <div class="entry">
+            <div class="entry-details">
+              <div class="entry-title">
+                Arxival
+                <span class="entry-subtitle">Your Machine Learning Assistant</span>
+              </div>
+              <ul>
+                <li>
+                    A research paper answering engine focused on openly accessible ML papers.
+                </li>
+                <li>
+                    Give it a query, get back ai-generated responses with citations and figures from relevant papers.
+                </li>
+              </ul>
+              <a
+                class="project-link"
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                >Project Link</a
+              >
+            </div>
+          </div>
+          <div class="entry">
+            <div class="entry-details">
+              <div class="entry-title">
+                Letterboxd Movie Recommendations <span class="entry-subtitle">Movie Recommendation App</span>
+              </div>
+              <ul>
+                <li>
+                    Scrapes publicly-accessible Letterboxd data and creates a movie recommendation model with it that can generate recommendations when provided with a Letterboxd username.
+                </li>
+              </ul>
+              <a
+                class="project-link"
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                >Project Link</a
+              >
+            </div>
+          </div>
+          <div class="entry">
+            <div class="entry-details">
+              <div class="entry-title">
+                Taste This
+                <span class="entry-subtitle">Find the most popular dishes at restaurants</span>
+              </div>
+              <ul>
+                <li>By analyzing customer reviews, we identify the most recommended dishes, their ratings, and what people are saying about them.</li>
+              </ul>
+              <a
+                class="project-link"
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                >Project Link</a
+              >
+            </div>
+            <div class="entry-dates">June 2023 - Sept 2023</div>
+          </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section-content">
+          <h2>
+            <img
+            src="https://em-content.zobj.net/source/apple/419/artist-palette_1f3a8.png"
+            alt="Artist Palette"
+            style="
+              width: 20px;
+              height: 20px;
+              vertical-align: middle;
+              margin-right: 6px;
+            "
+          /> Skills</h2>
+          <div class="grid-two">
+            <ul>
+    <li>Artificial Intelligence</li>
+    <li>Machine Learning</li>
+    <li>Deep Learning Fundamentals</li>
+    <li>Python & Java Programming</li>
+  </ul>
+  <ul>
+    <li>Web Scraping</li>
+    <li>Frontend</li>
+    <li>Backend</li>
+    <li>Problem Solving & Logical Thinking</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="section-content">
+          <h2>
+            <img
+            src="https://em-content.zobj.net/source/apple/419/scroll_1f4dc.png"
+            alt="Scroll"
+            style="
+              width: 20px;
+              height: 20px;
+              vertical-align: middle;
+              margin-right: 6px;
+            "
+          /> Certifications</h2>
+          <div class="grid-two">
+            <ul>
+                <li>HarvardX - CS50's Introduction to Computer Science</li>
+                <li>Stanford University & DeepLearning.AI - Machine Learning Specialization</li>
+              </ul>
+              <ul>
+                <li>Google - Crash Course on Python</li>
+              </ul>
+            </div>
+        </section>
+
+        <!-- Awards & Recognition Section-->
+        <section class = "section-content">
+            <h2>
+                <img
+                src="https://em-content.zobj.net/source/apple/419/sports-medal_1f3c5.png"
+                alt="Sports Medal"
+                style="
+                  width: 20px;
+                  height: 20px;
+                  vertical-align: middle;
+                  margin-right: 6px;
+                "
+              />Awards & Recognition</h2>
+              <ul>
+                <li>Second Place - Autonomy’s AI Art Jam</li>
+                <li>First Runner-up - Wonderkinds Quiz Contest</li>
+              </ul>
+        </section>
+
+        <!-- Tools & Software Section -->
+        <section class = "section-content">
+            <h2>
+                <img
+                src="https://em-content.zobj.net/source/apple/419/laptop_1f4bb.png"
+                alt="Laptop"
+                style="
+                  width: 20px;
+                  height: 20px;
+                  vertical-align: middle;
+                  margin-right: 6px;
+                "
+              />Tools & Software</h2>
+              <div class="grid-two">
+                <ul>
+        <li>Visual Studio Code</li>
+        <li>Cursor - The AI Code Editor</li>
+        <li>Windows Subsystem for Linux <span class="entry-subtitle">WSL</span></li>
+        <li>Git & Github</li>
+      </ul>
+      <ul>
+        <li>MS Office</li>
+        <li>Figma</li>
+        <li>Canva</li>
+        <li>Docker</li>
+                </ul>
+              </div>
+        </section>
+
+        <!-- Languages Section -->
+        <section class="section-content">
+          <h2>
+            <img
+            src="https://em-content.zobj.net/source/apple/419/speaking-head_1f5e3-fe0f.png"
+            alt="Speaking Head"
+            style="
+              width: 20px;
+              height: 20px;
+              vertical-align: middle;
+              margin-right: 6px;
+            "
+          />Languages</h2>
+          <ul>
+            <li>Telugu: Native Proficiency</li>
+            <li>English: Professional Proficiency</li>
+            <li>Hindi: Professional Proficiency</li>
+          </ul>
+        </section>
+
+      </main>
+    </div>
+  </body>
+</html>

@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Yashwanth Kosuri – AI Enthusiast Resume showcasing expertise in Artificial Intelligence, Machine Learning, and data-driven problem-solving"
+      content="Yashwanth | Resume"
     />
     <title>Yashwanth | Resume</title>
     <link rel="icon" type="image/png" href="assets/Profile picture.png"/>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -32,18 +34,21 @@
         padding: 0;
         background-color: #f5f5f7;
         color: #1d1d1f;
-        font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Roboto,
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           "Helvetica Neue", Arial, sans-serif;
         font-size: 14px;
         line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
 
       /* Container */
       .container {
+        width: 90%;
         max-width: 850px;
         margin: 20px auto;
         background-color: #ffffff;
-        padding: 40px;
+        padding: clamp(20px, 5vw, 40px);
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       }
@@ -51,13 +56,13 @@
       /* Header */
       header {
         display: flex;
-        align-items: center;
-        gap: 20px;
+        align-items: flex-start;
+        gap: clamp(16px, 3vw, 20px);
         margin-bottom: 24px;
       }
       .profile {
-        width: 100px;
-        height: 100px;
+        width: clamp(80px, 15vw, 100px);
+        height: clamp(80px, 15vw, 100px);
         border-radius: 50%;
         overflow: hidden;
         flex-shrink: 0;
@@ -191,6 +196,49 @@
         .entry-dates {
           margin-top: 4px;
         }
+        .container {
+          width: 95%;
+          margin: 10px auto;
+          padding: 20px;
+        }
+
+        .grid-two {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+
+        .entry {
+          gap: 8px;
+        }
+
+        .contact-info {
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .contact-info div {
+          width: 100%;
+        }
+
+        .main-info h1 {
+          font-size: clamp(22px, 5vw, 26px);
+        }
+
+        .subtitle {
+          font-size: clamp(14px, 3vw, 15px);
+        }
+      }
+
+      @media print {
+        body {
+          background-color: #ffffff;
+        }
+        .container {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          box-shadow: none;
+        }
       }
 
       /* Section Separator: Reduced spacing with a light grey line */
@@ -232,6 +280,35 @@
           transform: translate(-50%, -50%) scale(2);
           opacity: 0;
         }
+      }
+
+      /* Font size responsiveness */
+      h2 {
+        font-size: clamp(16px, 3vw, 18px);
+      }
+
+      .entry-title {
+        font-size: clamp(14px, 2.5vw, 15px);
+      }
+
+      .entry-subtitle {
+        font-size: clamp(13px, 2.5vw, 14px);
+      }
+
+      .entry-dates {
+        font-size: clamp(13px, 2.5vw, 15px);
+      }
+
+      /* Ensure links are properly visible on mobile */
+      .contact-info a {
+        display: inline-block;
+        padding: 2px 0;
+      }
+
+      /* Improve touch targets on mobile */
+      .project-link {
+        padding: 8px 0;
+        display: inline-block;
       }
     </style>
   </head>
